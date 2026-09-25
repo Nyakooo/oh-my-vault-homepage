@@ -28,19 +28,19 @@
       <p class="eyebrow">PERSONAL VAULT · PRIVACY</p>
       <h1>隐私政策</h1>
       <p class="updated">最后更新：2026 年 9 月 25 日</p>
-      <p>本政策说明 Personal Vault 浏览器扩展（Chrome 与 Microsoft Edge，以下简称“扩展”）如何处理数据。扩展用于连接用户自行部署的 Personal Vault 服务，不由开发者托管用户的保险库。</p>
+      <p>本政策说明 Personal Vault 浏览器扩展（Chrome 与 Microsoft Edge，以下简称“扩展”）如何处理数据。扩展用于连接用户自行部署的 Personal Vault 服务，不由开发者托管用户的保险库。下文所说的“处理”包括扩展在你的设备上读取、使用或暂存数据，不代表这些数据会传给扩展开发者。</p>
 
       <h2>扩展处理的数据</h2>
       <ul>
         <li><strong>连接信息：</strong>你配置的服务器地址、连接授权令牌及工作区信息保存在当前浏览器的扩展本地存储中，用于连接你指定的服务器。断开连接或移除扩展可删除本地连接信息；你也可以在服务器端撤销授权。</li>
         <li><strong>保险库数据与认证信息：</strong>扩展从你指定的服务器读取加密保险库数据，并在解锁后于浏览器本地解密。主密码不会发送给扩展开发者或服务器。解锁密钥保存在浏览器会话存储中，闲置约十分钟后自动锁定；已解密的登录信息仅在扩展运行期间用于显示、搜索和填充。</li>
-        <li><strong>当前网页地址及页面表单：</strong>扩展读取当前活动标签页的网址，以便在本地匹配对应的登录项。只有当你主动选择登录项并点击填充后，扩展才会请求页面访问权限，并在当前网页查找可见的用户名和密码输入框。扩展只填入字段，不会提交表单。网址和页面字段不会发送给扩展开发者。</li>
+        <li><strong>当前网页地址及页面表单：</strong>扩展在本地读取当前活动标签页的网址，以便匹配对应的登录项；不会建立或保存浏览历史。只有当你主动选择登录项并点击填充后，扩展才会请求页面访问权限，并检查当前网页可见的用户名和密码输入框，然后把所选登录信息填入字段。扩展不会读取输入框里原有的文字，也不会提交表单。当前网址和页面内容不会发送给扩展开发者或你配置的保险库服务器。</li>
         <li><strong>剪贴板：</strong>只有当你主动使用复制功能并授予权限时，选中的用户名、密码或生成的密码才会写入系统剪贴板。</li>
         <li><strong>密码生成：</strong>密码在浏览器本地生成，不会发送到开发者服务。</li>
       </ul>
 
       <h2>数据传输与第三方</h2>
-      <p>扩展没有开发者运营的云端账户、分析、广告或追踪服务。网络请求只发往你自行配置的 Personal Vault 服务器，用于授权配对和读取加密保险库数据。该服务器的运营者及其隐私实践由你自行决定。官网由 GitHub Pages 提供，访问官网时适用 GitHub 的相关政策。</p>
+      <p>扩展没有开发者运营的云端账户、分析、广告或追踪服务。网络请求只发往你自行配置的 Personal Vault 服务器：连接时会发送配对请求；读取保险库时会发送授权令牌并接收加密的保险库数据。解锁密码、解密后的保险库内容、当前网页地址及页面内容不会发送给扩展开发者。你配置的服务器由你或你选择的运营者管理，该服务器可能按自身设置记录网络请求日志。官网由 GitHub Pages 提供，访问官网时适用 GitHub 的相关政策。</p>
 
       <h2>数据保留与安全</h2>
       <p>连接设置保留在你的浏览器中，直至你断开连接、清除扩展数据或移除扩展。解锁状态使用会话存储，并在超时锁定时清除。扩展使用打包在扩展内的代码，不下载或执行远程脚本。</p>
@@ -55,17 +55,17 @@
         <p class="eyebrow">ENGLISH</p>
         <h1>Privacy Policy</h1>
         <p class="updated">Last updated: September 25, 2026</p>
-        <p>This policy explains how the Personal Vault browser extension for Chrome and Microsoft Edge (“the Extension”) handles data. The Extension connects to a Personal Vault server that you operate. The developer does not host your vault.</p>
+        <p>This policy explains how the Personal Vault browser extension for Chrome and Microsoft Edge (“the Extension”) handles data. The Extension connects to a Personal Vault server that you operate. The developer does not host your vault. “Handling” includes reading, using, or temporarily holding data on your device; it does not mean that the data is sent to the Extension developer.</p>
         <h2>Data the Extension handles</h2>
         <ul>
           <li><strong>Connection information:</strong> Your configured server address, authorization token, and workspace information are stored in this browser’s extension storage so the Extension can connect to your server. Disconnecting or removing the Extension deletes local connection information; you can also revoke authorization on your server.</li>
           <li><strong>Vault data and authentication information:</strong> The Extension retrieves encrypted vault data from your configured server and decrypts it locally in the browser after unlock. Your master password is not sent to the developer or the server. The unlock key is kept in browser session storage and automatically expires after about ten minutes of inactivity. Decrypted login data is used only while the Extension is running to display, search, and fill logins.</li>
-          <li><strong>Current page URL and form fields:</strong> The Extension reads the active tab’s URL to match logins locally. Only after you select a login and click Fill does it request page access and look for visible username and password fields on the current page. It fills fields but never submits the form. The URL and page fields are not sent to the Extension developer.</li>
+          <li><strong>Current page URL and page forms:</strong> The Extension reads the active tab’s URL locally to match logins; it does not build or save browsing history. Only after you select a login and click Fill does it request page access, inspect visible username and password fields, and fill them with the selected login. It does not read existing field text or submit the form. The current URL and page content are not sent to the Extension developer or your configured vault server.</li>
           <li><strong>Clipboard:</strong> Only when you use a copy action and grant permission, the selected username, password, or generated password is written to your system clipboard.</li>
           <li><strong>Password generation:</strong> Passwords are generated locally in your browser and are not sent to a developer service.</li>
         </ul>
         <h2>Transfers and third parties</h2>
-        <p>The Extension has no developer-operated cloud account, analytics, advertising, or tracking service. Network requests go only to the Personal Vault server you configure, for authorization pairing and retrieval of encrypted vault data. You choose the operator and privacy practices of that server. The official website is hosted by GitHub Pages; GitHub’s applicable policies govern visits to that website.</p>
+        <p>The Extension has no developer-operated cloud account, analytics, advertising, or tracking service. Network requests go only to the Personal Vault server you configure: a pairing request is sent when connecting, and an authorization token is sent when retrieving encrypted vault data. The Extension receives the encrypted vault data from that server. Your unlock password, decrypted vault contents, current page URL, and page content are not sent to the Extension developer. You or your chosen operator controls the configured server, which may keep network request logs according to its settings. The official website is hosted by GitHub Pages; GitHub’s applicable policies govern visits to that website.</p>
         <h2>Retention and security</h2>
         <p>Connection settings remain in your browser until you disconnect, clear extension data, or remove the Extension. Unlock state uses session storage and is cleared when the vault locks. The Extension uses code packaged with the Extension and does not download or execute remote scripts.</p>
         <h2>Children and changes</h2>
