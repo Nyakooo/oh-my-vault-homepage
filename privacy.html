@@ -37,7 +37,7 @@
         <li><strong>当前网页地址及页面表单：</strong>扩展在本地读取当前活动标签页的网址，以便匹配对应的登录项；不会建立或保存浏览历史。只有当你主动选择登录项并点击填充后，扩展才会请求页面访问权限，并检查当前网页可见的用户名和密码输入框，然后把所选登录信息填入字段。扩展不会读取输入框里原有的文字，也不会提交表单。当前网址和页面内容不会发送给扩展开发者或你配置的保险库服务器。</li>
         <li><strong>剪贴板：</strong>只有当你主动使用复制功能并授予权限时，选中的用户名、密码或生成的密码才会写入系统剪贴板。</li>
         <li><strong>密码生成：</strong>密码在浏览器本地生成，不会发送到开发者服务。</li>
-        <li><strong>通行密钥：</strong>启用后，扩展会请求访问 HTTPS 网站，以接收网站的 WebAuthn 请求。请求中的网站域名在本地处理。通行密钥私钥在浏览器本地生成、加密并保存到你授权的保险库服务器；服务器仅收到加密登录项。签名在浏览器本地完成。每次创建或使用通行密钥时，扩展确认窗口都会要求你验证工作区密码。</li>
+        <li><strong>通行密钥：</strong>启用后，扩展会请求访问 HTTPS 网站，以接收网站的 WebAuthn 请求。请求中的网站域名在本地处理。通行密钥私钥在浏览器本地生成、加密并保存到你授权的保险库服务器；服务器仅收到加密登录项。签名在浏览器本地完成。每次创建或使用通行密钥时，都需在扩展确认窗口确认；保险库锁定时才需输入工作区密码。</li>
       </ul>
 
       <h2>数据传输与第三方</h2>
@@ -64,7 +64,7 @@
           <li><strong>Current page URL and page forms:</strong> The Extension reads the active tab’s URL locally to match logins; it does not build or save browsing history. Only after you select a login and click Fill does it request page access, inspect visible username and password fields, and fill them with the selected login. It does not read existing field text or submit the form. The current URL and page content are not sent to the Extension developer or your configured vault server.</li>
           <li><strong>Clipboard:</strong> Only when you use a copy action and grant permission, the selected username, password, or generated password is written to your system clipboard.</li>
           <li><strong>Password generation:</strong> Passwords are generated locally in your browser and are not sent to a developer service.</li>
-          <li><strong>Passkeys:</strong> When enabled, the Extension requests access to HTTPS websites to receive their WebAuthn requests. Website origins are processed locally. Passkey private keys are generated and encrypted in the browser before they are saved to your authorized vault server; the server receives only encrypted login items. Signing happens locally. The Extension confirmation window asks you to verify your workspace password for each passkey creation or use.</li>
+          <li><strong>Passkeys:</strong> When enabled, the Extension requests access to HTTPS websites to receive their WebAuthn requests. Website origins are processed locally. Passkey private keys are generated and encrypted in the browser before they are saved to your authorized vault server; the server receives only encrypted login items. Signing happens locally. Confirm each passkey creation or use in the Extension. The workspace password is requested only when the vault is locked.</li>
         </ul>
         <h2>Transfers and third parties</h2>
         <p>The Extension has no developer-operated cloud account, analytics, advertising, or tracking service. Network requests go only to the Personal Vault server you configure: a pairing request is sent when connecting; an authorization token is sent to retrieve encrypted vault data; and, when you confirm saving a passkey, an encrypted login item is written to the server. Your unlock password, decrypted vault contents, current page URL, and page content are not sent to the Extension developer. You or your chosen operator controls the configured server, which may keep network request logs according to its settings. The official website is hosted by GitHub Pages; GitHub’s applicable policies govern visits to that website.</p>
