@@ -1,108 +1,134 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#183f34" />
-    <meta name="description" content="Personal Vault 是一款自托管、单用户密码管理器。浏览器本地加密，服务端只保存密文，并提供 Chrome 与 Edge 扩展。" />
+    <meta name="description" content="A self-hosted, single-user password manager. Local browser encryption, encrypted server storage, and companion extensions for Chrome and Edge." />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20260926-2" />
-    <title>Personal Vault — 自己掌管的密码保险库</title>
+    <link rel="stylesheet" href="./styles.css?v=20261101" />
+    <link rel="alternate" hreflang="en" href="./index.html" />
+    <link rel="alternate" hreflang="zh-CN" href="./index.zh-CN.html" />
+    <title>Personal Vault — Your passwords. Your server.</title>
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="Personal Vault 首页">
+      <a class="brand" href="#top" aria-label="Personal Vault home">
         <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 10V7.5a5.5 5.5 0 0 1 11 0V10M5.5 10h13A1.5 1.5 0 0 1 20 11.5v8a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19.5v-8A1.5 1.5 0 0 1 5.5 10Z"/><path d="M12 14v3"/></svg></span>
         <span>Personal <b>Vault</b></span>
       </a>
-      <nav class="main-nav" aria-label="主导航">
-        <a href="#features">功能</a>
-        <a href="#how-it-works">使用方式</a>
-        <a href="#install">部署</a>
-        <a href="#extension">浏览器扩展</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#install">Deploy</a>
+        <a href="#extension">Extensions</a><a href="#safety">Safety guide</a>
       </nav>
-      <a class="header-cta" href="https://github.com/users/Nyakooo/packages/container/package/oh-my-vault">获取 Docker 镜像 <span aria-hidden="true">↗</span></a>
+      <a class="language-switch" href="./index.zh-CN.html" lang="zh-CN" hreflang="zh-CN" aria-label="切换到中文">中文</a>
+      <a class="header-cta" href="https://github.com/users/Nyakooo/packages/container/package/oh-my-vault">Get Docker image <span aria-hidden="true">↗</span></a>
     </header>
 
     <main id="top">
       <section class="hero section-wrap">
         <div class="hero-copy">
-          <div class="eyebrow"><span></span> 为个人自托管而设计</div>
-          <h1>密码归你掌管。<br /><em>保险库也一样。</em></h1>
-          <p class="hero-intro">Personal Vault 是一款可以部署在自己服务器上的密码管理器。数据在浏览器中加密后才会同步，服务器只保存密文。</p>
+          <div class="eyebrow"><span></span> Built for personal self-hosting</div>
+          <h1>Your passwords.<br /> <em>Your vault, too.</em></h1>
+          <p class="hero-intro">Run Personal Vault on your own server. Your browser encrypts vault data before it syncs, so your server stores ciphertext.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#install">开始部署 <span aria-hidden="true">↓</span></a>
-            <a class="button button-quiet" href="https://github.com/users/Nyakooo/packages/container/package/oh-my-vault">查看镜像包 <span aria-hidden="true">↗</span></a>
+            <a class="button button-primary" href="#install">Start self-hosting <span aria-hidden="true">↓</span></a>
+            <a class="button button-quiet" href="https://github.com/users/Nyakooo/packages/container/package/oh-my-vault">View image package <span aria-hidden="true">↗</span></a>
           </div>
-          <div class="hero-facts"><span><i class="fact-dot"></i> 单用户 · 自托管</span><span><i class="fact-lock">⌑</i> 客户端加密</span><span><i class="fact-leaf"></i> 公开容器镜像</span></div>
+          <div class="hero-facts"><span><i class="fact-dot"></i> Single user · Self-hosted</span><span><i class="fact-lock">⌑</i> Client-side encryption</span><span><i class="fact-leaf"></i> Public container image</span></div>
         </div>
-        <div class="vault-visual" aria-label="保险库界面示意图">
+        <div class="vault-visual" aria-label="Illustrative vault interface">
           <div class="visual-glow"></div><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
           <div class="vault-card">
-            <div class="vault-card-top"><div class="mini-brand"><span class="mini-mark">PV</span><span>Personal Vault</span></div><span class="unlocked"><i></i> 已解锁</span></div>
-            <div class="vault-card-body"><div class="vault-sidebar"><span class="side-label">我的保险库</span><span class="side-item active"><b>▦</b> 所有条目 <small>24</small></span><span class="side-item"><b>☆</b> 收藏夹</span><span class="side-item"><b>⌕</b> 最近使用</span><div class="side-rule"></div><span class="side-label">类型</span><span class="side-item"><b>▣</b> 登录信息</span><span class="side-item"><b>▤</b> 安全笔记</span></div>
-              <div class="vault-list"><div class="list-title"><div><small>保险库</small><strong>所有条目</strong></div><span class="search-pill">⌕ <i>搜索条目</i><kbd>⌘ K</kbd></span></div><div class="entry selected"><span class="entry-icon green">N</span><span><b>Notion</b><small>me@example.com</small></span><span class="star">★</span></div><div class="entry"><span class="entry-icon amber">G</span><span><b>GitHub</b><small>dev@example.com</small></span></div><div class="entry"><span class="entry-icon blue">A</span><span><b>AWS Console</b><small>cloud@example.com</small></span></div><div class="entry"><span class="entry-icon violet">M</span><span><b>邮件账户</b><small>hello@example.com</small></span></div>
-                <div class="detail-preview"><div class="detail-title"><span>Notion</span><span class="detail-more">•••</span></div><small>用户名</small><b>me@example.com</b><small>密码</small><div class="masked">•••••••••••••••• <span>复制</span></div><div class="site-chip">⌁ notion.so</div></div>
+            <div class="vault-card-top"><div class="mini-brand"><span class="mini-mark">PV</span><span>Personal Vault</span></div><span class="unlocked"><i></i> Unlocked</span></div>
+            <div class="vault-card-body"><div class="vault-sidebar"><span class="side-label">My vault</span><span class="side-item active"><b>▦</b> All items <small>24</small></span><span class="side-item"><b>☆</b> Favorites</span><span class="side-item"><b>⌕</b> Recent</span><div class="side-rule"></div><span class="side-label">Types</span><span class="side-item"><b>▣</b> Logins</span><span class="side-item"><b>▤</b> Secure notes</span></div>
+              <div class="vault-list"><div class="list-title"><div><small>Vault</small><strong>All items</strong></div><span class="search-pill">⌕ <i>Search items</i><kbd>⌘ K</kbd></span></div><div class="entry selected"><span class="entry-icon green">N</span><span><b>Notion</b><small>me@example.com</small></span><span class="star">★</span></div><div class="entry"><span class="entry-icon amber">G</span><span><b>GitHub</b><small>dev@example.com</small></span></div><div class="entry"><span class="entry-icon blue">A</span><span><b>AWS Console</b><small>cloud@example.com</small></span></div><div class="entry"><span class="entry-icon violet">M</span><span><b>Email account</b><small>hello@example.com</small></span></div>
+                <div class="detail-preview"><div class="detail-title"><span>Notion</span><span class="detail-more">•••</span></div><small>Username</small><b>me@example.com</b><small>Password</small><div class="masked">•••••••••••••••• <span>Copy</span></div><div class="site-chip">⌁ notion.so</div></div>
               </div></div>
-            <div class="vault-card-foot"><span><i></i> 已同步 · 密文存储</span><span>自动锁定 10 分钟</span></div>
+            <div class="vault-card-foot"><span><i></i> Synced · Encrypted storage</span><span>Auto-lock after 10 minutes</span></div>
           </div>
-          <div class="floating-badge"><span class="badge-shield">✓</span><span><b>本地加密</b><small>主密码不会上传</small></span></div>
+          <div class="floating-badge"><span class="badge-shield">✓</span><span><b>Local encryption</b><small>Master password stays local</small></span></div>
           <div class="floating-key">⌑</div>
         </div>
-        <div class="hero-bottom"><span>密码 · 安全笔记 · 卡片 · 身份</span><span class="scroll-label">了解 Personal Vault <b>↓</b></span></div>
+        <div class="hero-bottom"><span>Passwords · Notes · Cards · Identities</span><span class="scroll-label">Explore Personal Vault <b>↓</b></span></div>
       </section>
 
-      <section class="trust-strip"><div><b>数据放在自己的服务器</b><span>Docker 一条命令启动</span></div><div><b>加密在浏览器完成</b><span>同步内容为密文</span></div><div><b>数据可随时带走</b><span>加密备份与恢复</span></div><div><b>浏览器快速填充</b><span>Chrome 与 Edge 扩展</span></div></section>
+      <section class="trust-strip"><div><b>Your data, your server</b><span>Run with Docker</span></div><div><b>Encrypted in your browser</b><span>Only ciphertext is synced</span></div><div><b>Keep a portable backup</b><span>Encrypted backup and restore</span></div><div><b>Fill from your browser</b><span>Chrome and Edge extensions</span></div></section>
 
       <section class="section section-wrap" id="features">
-        <div class="section-heading"><div><div class="eyebrow">你的日常工具</div><h2>够用、可靠，<em>由你做主。</em></h2></div><p>为个人使用而设计：只需维护自己的服务，不必把保险库托付给第三方账号体系。</p></div>
+        <div class="section-heading"><div><div class="eyebrow">Your everyday companion</div><h2>Everyday essentials. <em>Under your control.</em></h2></div><p>Built for personal use. Maintain your own service without entrusting your vault to a third-party account system.</p></div>
         <div class="feature-grid">
-          <article class="feature-card feature-large"><span class="feature-icon icon-green">⌑</span><div><h3>先加密，再同步</h3><p>主密码只在浏览器本地派生加密密钥。服务器保存加密后的保险库内容，不接触明文密码或主密码。</p></div><div class="encryption-flow"><span>你的浏览器</span><b>明文</b><i>→</i><span class="flow-encrypted">本地加密</span><i>→</i><span>服务器密文</span></div></article>
-          <article class="feature-card"><span class="feature-icon icon-gold">✦</span><h3>一个地方收好</h3><p>登录信息、安全笔记、银行卡和身份资料。支持搜索、收藏、TOTP 与 Bitwarden JSON 导入。</p><div class="tag-row"><span>登录信息</span><span>安全笔记</span><span>TOTP</span></div></article>
-          <article class="feature-card"><span class="feature-icon icon-blue">↻</span><h3>离线也能查看</h3><p>成功解锁并同步后，浏览器会缓存密文。服务器暂时不可用时，可在本机解锁查看已同步内容。</p><div class="offline-art"><span class="offline-dot"></span><span>本地密文缓存</span><b>可用</b></div></article>
-          <article class="feature-card"><span class="feature-icon icon-violet">⇧</span><h3>备份可恢复</h3><p>下载加密的 .pvault 备份。恢复时输入创建备份时使用的主密码，不依赖原服务器数据库。</p><div class="backup-file"><span>PV</span><span><b>personal-vault.pvault</b><small>加密备份 · 本地下载</small></span><span class="download-mark">↓</span></div></article>
+          <article class="feature-card feature-large"><span class="feature-icon icon-green">⌑</span><div><h3>Encrypt first. Then sync.</h3><p>Your master password unlocks encryption keys locally in your browser. The server stores encrypted vault content, without receiving plaintext passwords or your master password.</p></div><div class="encryption-flow"><span>Your browser</span><b>Plaintext</b><i>→</i><span class="flow-encrypted">Local encryption</span><i>→</i><span>Server ciphertext</span></div></article>
+          <article class="feature-card"><span class="feature-icon icon-gold">✦</span><h3>Everything in one place</h3><p>Store logins, secure notes, cards, and identities. Search, favorite, use TOTP, and import Bitwarden JSON.</p><div class="tag-row"><span>Logins</span><span>Secure notes</span><span>TOTP</span></div></article>
+          <article class="feature-card"><span class="feature-icon icon-blue">↻</span><h3>Read your vault offline</h3><p>After you unlock and sync, your browser caches encrypted data. Unlock locally to read previously synced items when the server is unavailable.</p><div class="offline-art"><span class="offline-dot"></span><span>Local encrypted cache</span><b>Available</b></div></article>
+          <article class="feature-card"><span class="feature-icon icon-violet">⇧</span><h3>Back up and restore</h3><p>Download an encrypted .pvault backup. Restore it with the master password used at export time, independently of the original server database.</p><div class="backup-file"><span>PV</span><span><b>personal-vault.pvault</b><small>Encrypted backup · Local download</small></span><span class="download-mark">↓</span></div></article>
         </div>
       </section>
 
-      <section class="how-section" id="how-it-works"><div class="section-wrap how-inner"><div class="section-heading"><div><div class="eyebrow">从部署到使用</div><h2>你的保险库，<em>几步就绪。</em></h2></div><p>先运行自己的服务，再通过浏览器访问。主密码负责解锁保险库，登录密码只负责建立服务会话。</p></div>
-        <div class="steps"><article><span class="step-number">01</span><div class="step-icon">⌘</div><h3>拉取并启动镜像</h3><p>直接从 GHCR 下载公开镜像，用 Docker 运行。也可查看公开源代码并自行构建。</p><small>Docker · GHCR · 自托管</small></article><div class="step-connector"></div><article><span class="step-number">02</span><div class="step-icon">↗</div><h3>创建账号与保险库</h3><p>访问你的部署地址，创建单用户账号，再设置单独的主密码。</p><small>登录密码 ≠ 主密码</small></article><div class="step-connector"></div><article><span class="step-number">03</span><div class="step-icon">⌑</div><h3>加密后开始同步</h3><p>在浏览器创建和管理条目。支持导入含通行密钥的 Bitwarden JSON，并可使用 Chrome 或 Edge 扩展。</p><small>浏览器本地加密</small></article></div>
+      <section class="how-section" id="how-it-works"><div class="section-wrap how-inner"><div class="section-heading"><div><div class="eyebrow">From setup to daily use</div><h2>Your own vault. <em>A few steps away.</em></h2></div><p>Run your server, then open it in your browser. Your master password unlocks the vault; your account password signs you in to the service.</p></div>
+        <div class="steps"><article><span class="step-number">01</span><div class="step-icon">⌘</div><h3>Pull and run the image</h3><p>Pull the public image from GHCR and run it with Docker. No source repository access is needed.</p><small>Docker · GHCR · Self-hosted</small></article><div class="step-connector"></div><article><span class="step-number">02</span><div class="step-icon">↗</div><h3>Create your account and vault</h3><p>Open your deployment, create your single-user account, and set a separate master password.</p><small>Account password ≠ Master password</small></article><div class="step-connector"></div><article><span class="step-number">03</span><div class="step-icon">⌑</div><h3>Start syncing encrypted data</h3><p>Manage items in your browser, import Bitwarden JSON including passkeys, and connect the Chrome or Edge extension.</p><small>Encrypted locally in your browser</small></article></div>
       </div></section>
 
-      <section class="install-section" id="install"><div class="section-wrap install-layout"><div class="install-copy"><div class="eyebrow">Docker 部署 · 公开镜像</div><h2>拉取镜像，<br /><em>直接运行。</em></h2><p>服务器安装 Docker 后，可直接从 GitHub Container Registry 拉取公开镜像运行，无需克隆项目或登录 GitHub。你也可以查看公开源代码并自行构建。</p><div class="install-points"><span><i>✓</i> 支持 linux/amd64 与 linux/arm64</span><span><i>✓</i> Docker 命名卷持久保存保险库数据库</span><span><i>✓</i> 生产环境建议通过 HTTPS 反向代理访问</span></div><a href="https://github.com/users/Nyakooo/packages/container/package/oh-my-vault" class="text-link">打开公开镜像包 <b>↗</b></a><a href="https://github.com/Nyakooo/oh-my-vault" class="text-link">查看开源代码 <b>↗</b></a></div>
-          <div class="terminal-card"><div class="terminal-bar"><div class="traffic"><i></i><i></i><i></i></div><span>终端 · 直接运行 Docker 镜像</span><button type="button" class="copy-button" data-copy="docker pull ghcr.io/nyakooo/oh-my-vault:latest\ndocker run -d --name personal-vault --restart unless-stopped -p 18741:18741 -v personal-vault-data:/data ghcr.io/nyakooo/oh-my-vault:latest">复制命令</button></div><pre><code><span class="code-muted"># 匿名下载公开镜像</span>
+      <section class="install-section" id="install"><div class="section-wrap install-layout"><div class="install-copy"><div class="eyebrow">Docker deployment · Public image</div><h2>Pull the image.<br /> <em>Make it yours.</em></h2><p>With Docker installed, run the public image from GitHub Container Registry. No GitHub login or clone is needed. The source repository is private; deployment does not require access to it.</p><div class="install-points"><span><i>✓</i> Supports linux/amd64 and linux/arm64</span><span><i>✓</i> A named Docker volume persists your vault database</span><span><i>✓</i> Localhost binding; configure an HTTPS proxy for remote access</span></div><a href="https://github.com/users/Nyakooo/packages/container/package/oh-my-vault" class="text-link">Open public image package <b>↗</b></a></div>
+          <div class="terminal-card"><div class="terminal-bar"><div class="traffic"><i></i><i></i><i></i></div><span>Terminal · Run the Docker image</span><button type="button" class="copy-button" aria-live="polite">Copy commands</button></div><pre><code><span class="code-muted"># Pull the public image without signing in</span>
 docker pull <span class="code-accent">ghcr.io/nyakooo/oh-my-vault:latest</span>
 
-<span class="code-muted"># 启动服务，并持久保存数据</span>
+<span class="code-muted"># Start the service with persistent storage</span>
 docker run -d \
   --name personal-vault \
   --restart unless-stopped \
-  -p 18741:18741 \
+  -p 127.0.0.1:18741:18741 \
   -v personal-vault-data:/data \
   ghcr.io/nyakooo/oh-my-vault:latest
 
-<span class="code-muted"># 打开（服务器本机）</span>
-http://localhost:18741</code></pre><div class="terminal-foot"><span><i></i> 数据保存在 Docker 卷</span><span>personal-vault-data</span></div></div>
+<span class="code-muted"># Open on the server itself</span>
+# http://localhost:18741</code></pre><div class="terminal-foot"><span><i></i> Data persists in a Docker volume</span><span>personal-vault-data</span></div></div>
         </div></section>
 
-      <section class="extension-section section-wrap" id="extension"><div class="extension-panel"><div class="extension-copy"><div class="eyebrow">Chrome & Edge · 商店版已上架 · 0.2 离线包已更新</div><h2>让常用登录信息<br /><em>就在手边。</em></h2><p>扩展连接你自行部署的 Personal Vault 服务，在浏览器本地解密保险库并匹配网站登录信息。启用通行密钥后，可创建或使用 WebAuthn 通行密钥；也可导入包含 FIDO2 凭据的 Bitwarden JSON。每次通行密钥操作都需在扩展确认窗口确认；保险库已解锁时无需重新输入密码，锁定时才会要求输入。选择登录项并点击 Fill login 后才会填入表单，不会自动提交。</p><div class="extension-actions"><a class="button button-primary" href="https://chromewebstore.google.com/detail/personal-vault/edbbapcpgldalkjjjdcmiobgopfijafp" target="_blank" rel="noopener noreferrer">Chrome 商店 <span>↗</span></a><a class="button button-quiet" href="https://microsoftedge.microsoft.com/addons/detail/kipamficohjmhpmpgfjgkbhljepenejc" target="_blank" rel="noopener noreferrer">Edge 商店 <span>↗</span></a><a class="button button-quiet button-download" href="./downloads/personal-vault-v0.2.1.zip" download>0.2.1 离线包 <span>↓</span></a></div><div class="extension-download-note"><b>手动安装离线包</b><small>下载 ZIP 并解压后，在浏览器扩展管理页加载解压后的文件夹。<a href="https://github.com/Nyakooo/oh-my-vault/blob/master/apps/extension/README.md#install-for-development" target="_blank" rel="noopener noreferrer">查看安装步骤</a> · 0.2.1 通行密钥暂在离线包提供；商店版更新待发布 · 需搭配新版服务端使用</small></div></div><div class="extension-preview"><div class="browser-frame"><div class="browser-top"><span></span><span></span><span></span><div class="address-bar">🔒 example.com</div><span class="puzzle">◆</span></div><div class="browser-page"><div class="page-lines"><i></i><i></i><i></i><b></b><i></i></div><div class="extension-popup"><div class="popup-top"><span class="mini-mark">PV</span><b>Personal Vault</b><span class="popup-lock">⌑</span></div><div class="match-label">匹配此网站 <b>1</b></div><div class="popup-login"><span class="entry-icon green">N</span><span><b>Notion</b><small>me@example.com</small></span><span>›</span></div><button type="button" class="fill-demo">填入登录信息</button><small class="popup-safety">仅填入匹配的网站 · 不会自动提交</small></div></div></div><div class="extension-note"><span>✓</span><div><b>你检查后再提交</b><small>扩展不会自动提交登录表单。</small></div></div></div></div></section>
+      <section class="extension-section section-wrap" id="extension"><div class="extension-panel"><div class="extension-copy"><div class="eyebrow">Chrome & Edge · Install from the stores</div><h2>Your everyday logins,<br /> <em>always close by.</em></h2><p>Connect to your own server and unlock logins locally. The extension supports workspaces, TOTP, password generation, passkeys, and optional floating panels and login save prompts. You initiate filling; forms are never submitted automatically. Saving a new login or using a passkey requires confirmation. Store reviews progress independently, so features depend on your installed version.</p><div class="extension-actions"><a class="button button-primary" href="https://chromewebstore.google.com/detail/personal-vault/edbbapcpgldalkjjjdcmiobgopfijafp" target="_blank" rel="noopener noreferrer">Chrome Web Store <span>↗</span></a><a class="button button-quiet" href="https://microsoftedge.microsoft.com/addons/detail/kipamficohjmhpmpgfjgkbhljepenejc" target="_blank" rel="noopener noreferrer">Edge Add-ons <span>↗</span></a><a class="button button-quiet button-download" href="#extension-setup">Setup guide <span>↓</span></a></div><div class="extension-download-note"><b>Store installs receive future updates</b><small>Legacy <a href="./downloads/personal-vault-v0.2.1.zip" download>0.2.1 ZIP</a> is an archive, not the current release. Manual installations do not update automatically; use the store version for daily use.</small></div></div><div class="extension-preview"><div class="browser-frame"><div class="browser-top"><span></span><span></span><span></span><div class="address-bar">🔒 example.com</div><span class="puzzle">◆</span></div><div class="browser-page"><div class="page-lines"><i></i><i></i><i></i><b></b><i></i></div><div class="extension-popup"><div class="popup-top"><span class="mini-mark">PV</span><b>Personal Vault</b><span class="popup-lock">⌑</span></div><div class="match-label">Matching this site <b>1</b></div><div class="popup-login"><span class="entry-icon green">N</span><span><b>Notion</b><small>me@example.com</small></span><span>›</span></div><span class="fill-demo" aria-hidden="true">Fill login</span><small class="popup-safety">Matching sites only · No auto-submit</small></div></div></div><div class="extension-note"><span>✓</span><div><b>Review, then submit</b><small>The extension never submits login forms.</small></div></div></div></div></section>
 
-      <section class="security-section"><div class="section-wrap security-inner"><div class="security-symbol"><span>⌑</span><i></i><i></i></div><div><div class="eyebrow">为个人使用设计</div><h2>自己托管，也要了解边界。</h2><p>请使用 HTTPS 并保护好服务器。主密码无法找回；遗失时，只能从可用备份恢复。浏览器缓存和剪贴板清理不等于绝对安全。建议定期下载并妥善保管加密备份。</p><span class="text-link">主密码不会上传 · 备份请自行保管</span></div><div class="security-aside"><span>你负责</span><b>服务器、HTTPS<br />与备份保管</b><span class="aside-rule"></span><span>浏览器负责</span><b>本地加密<br />与保险库解锁</b></div></div></section>
+      <section class="section section-wrap guide-section" id="extension-setup">
+        <div class="section-heading"><div><div class="eyebrow">Connect to your own service</div><h2>From installation to <em>your first fill.</em></h2></div><p>The extension has no hosted account or preset server. Deploy your service first, then authorize a workspace.</p></div>
+        <ol class="guide-grid">
+          <li><h3>Install the extension</h3><p>Install from Chrome Web Store or Edge Add-ons and pin it to your toolbar. For the legacy ZIP, extract it, open chrome://extensions or edge://extensions, enable Developer mode, choose Load unpacked, and select the folder containing manifest.json.</p></li>
+          <li><h3>Authorize a workspace</h3><p>Open extension Settings, enter your server HTTPS address including any base path, save, and choose Connect extension. In the page that opens, sign in, unlock, select a workspace, and approve this browser connection.</p></li>
+          <li><h3>Unlock and fill</h3><p>Enter your workspace password in the extension to unlock locally. Visit a saved website, choose a matching item, and click Fill login. Review and submit yourself. Refresh open website tabs after extension updates; copy manually if filling is unavailable.</p></li>
+        </ol>
+      </section>
 
-      <section class="final-cta section-wrap"><div class="final-card"><div class="final-orb"></div><div class="eyebrow">个人自托管 · Docker 镜像公开下载</div><h2>准备好掌管自己的密码了吗？</h2><p>从 GHCR 获取镜像，在自己的服务器启动你的保险库。</p><a class="button button-light" href="https://github.com/users/Nyakooo/packages/container/package/oh-my-vault">查看公开镜像包 <span>↗</span></a></div></section>
+      <section class="security-section"><div class="section-wrap security-inner"><div class="security-symbol"><span>⌑</span><i></i><i></i></div><div><div class="eyebrow">Designed for personal use</div><h2>Self-hosting comes with responsibilities.</h2><p>Use HTTPS and protect your server. A forgotten master password cannot be recovered, and encrypted backups still require the password used at export time. Browser caches and clipboard clearing do not guarantee security. Keep regular encrypted backups in a safe place.</p><span class="text-link">Master password stays local · Keep your own backups</span></div><div class="security-aside"><span>You manage</span><b>Server, HTTPS<br />and backup storage</b><span class="aside-rule"></span><span>Your browser handles</span><b>Local encryption<br />and vault unlocking</b></div></div></section>
+
+      <section class="section section-wrap guide-section" id="safety">
+        <div class="section-heading"><div><div class="eyebrow">Deployment and ongoing care</div><h2>Build safer habits, <em>step by step.</em></h2></div><p>Client-side encryption protects stored and synced vault content. It cannot protect a compromised device or stop a tampered web client from stealing secrets when you unlock.</p></div>
+        <div class="guide-grid safety-grid">
+          <article><h3>01 · HTTPS and your server</h3><p>The example binds to 127.0.0.1 only. Use a reverse proxy on the same host with a valid HTTPS certificate. Open only necessary ports; do not expose port 18741 directly to the internet. For a containerized proxy, use a dedicated Docker network. Keep your OS, Docker, and browser updated.</p><p>For Caddy running on the host, point your domain to the server, allow ports 80/443 for certificate setup and HTTPS, and replace the example domain:</p><pre><code>vault.example.com {
+  reverse_proxy 127.0.0.1:18741
+}</code></pre></article>
+          <article><h3>02 · Two passwords, two purposes</h3><p>Your account password authenticates you to the server. Your master (workspace) password decrypts data locally. Use a distinct strong password for each, and keep your master password safely outside the vault. An encrypted backup cannot be decrypted without its master password.</p></article>
+          <article><h3>03 · Backups and recovery</h3><p>Export encrypted .pvault backups regularly, keep a copy on a separate device, and test recovery in a separate workspace. Export requires your account password; recovery requires the master password used at export time. Plaintext JSON contains sensitive data; avoid retaining it or uploading it to public locations.</p></article>
+          <article><h3>04 · Extensions and devices</h3><p>Authorize only your own server and intended workspaces. Avoid unlocking on public or shared devices, and lock when stepping away. Enable floating panels, login saving, and passkey permissions only as needed. Revoke lost or unused devices in the web vault browser extension authorization settings.</p></article>
+          <article><h3>05 · Back up before updating</h3><p>Export a backup, stop the container, and snapshot the entire data volume. Keep the old image version. Pull the new image and recreate the container with the same volume and configuration; do not delete the volume. Check sign-in, unlock, items, and extension connections. Roll back with the matching old image and data snapshot.</p></article>
+          <article><h3>06 · Check the site before filling</h3><p>Check the domain and HTTPS before selecting an account to fill. The extension does not submit forms; cross-origin forms need extra confirmation. Other programs may read your clipboard, so clear it after use. Offline caches hold previously synced content and are not a substitute for separate backups.</p></article>
+        </div>
+      </section>
+
+      <section class="final-cta section-wrap"><div class="final-card"><div class="final-orb"></div><div class="eyebrow">Personal self-hosting · Public Docker image</div><h2>Ready to take charge of your passwords?</h2><p>Get the image from GHCR and start your vault on your own server.</p><a class="button button-light" href="https://github.com/users/Nyakooo/packages/container/package/oh-my-vault">View public image package <span>↗</span></a></div></section>
     </main>
-    <footer class="site-footer section-wrap"><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">PV</span><span>Personal <b>Vault</b></span></a><span>为个人自托管而做 · Apache License 2.0</span><div><a href="https://github.com/Nyakooo/oh-my-vault">GitHub 源代码</a><a href="https://github.com/users/Nyakooo/packages/container/package/oh-my-vault">GHCR 镜像包</a></div></footer>
+    <footer class="site-footer section-wrap"><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">PV</span><span>Personal <b>Vault</b></span></a><span>Built for personal self-hosting · Public Docker image</span><div><a href="./privacy.html">Privacy policy</a><a href="https://github.com/Nyakooo/oh-my-vault-homepage/issues">Report an issue</a><a href="https://github.com/users/Nyakooo/packages/container/package/oh-my-vault">GHCR package</a></div></footer>
     <script>
       document.querySelectorAll(".copy-button").forEach((button) => {
         button.addEventListener("click", async () => {
           try {
-            await navigator.clipboard.writeText(button.dataset.copy || "");
-            button.textContent = "已复制";
-            window.setTimeout(() => { button.textContent = "复制命令"; }, 1800);
+            await navigator.clipboard.writeText(button.closest(".terminal-card").querySelector("code").textContent.trim());
+            button.textContent = "Copied";
+            window.setTimeout(() => { button.textContent = "Copy commands"; }, 1800);
           } catch {
-            button.textContent = "请手动复制";
+            button.textContent = "Please copy manually";
           }
         });
       });

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#183f34" />
+    <meta name="description" content="Personal Vault 是一款自托管、单用户密码管理器。浏览器本地加密，服务端只保存密文，并提供 Chrome 与 Edge 扩展。" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css?v=20261101" />
+    <link rel="alternate" hreflang="en" href="./index.html" />
+    <link rel="alternate" hreflang="zh-CN" href="./index.zh-CN.html" />
+    <title>Personal Vault — 自己掌管的密码保险库</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Personal Vault 首页">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 10V7.5a5.5 5.5 0 0 1 11 0V10M5.5 10h13A1.5 1.5 0 0 1 20 11.5v8a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19.5v-8A1.5 1.5 0 0 1 5.5 10Z"/><path d="M12 14v3"/></svg></span>
+        <span>Personal <b>Vault</b></span>
+      </a>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="#features">功能</a>
+        <a href="#how-it-works">使用方式</a>
+        <a href="#install">部署</a>
+        <a href="#extension">浏览器扩展</a><a href="#safety">安全指南</a>
+      </nav>
+      <a class="language-switch" href="./index.html" lang="en" hreflang="en" aria-label="Switch to English">English</a>
+      <a class="header-cta" href="https://github.com/users/Nyakooo/packages/container/package/oh-my-vault">获取 Docker 镜像 <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="top">
+      <section class="hero section-wrap">
+        <div class="hero-copy">
+          <div class="eyebrow"><span></span> 为个人自托管而设计</div>
+          <h1>密码归你掌管。<br /><em>保险库也一样。</em></h1>
+          <p class="hero-intro">Personal Vault 是一款可以部署在自己服务器上的密码管理器。数据在浏览器中加密后才会同步，服务器只保存密文。</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#install">开始部署 <span aria-hidden="true">↓</span></a>
+            <a class="button button-quiet" href="https://github.com/users/Nyakooo/packages/container/package/oh-my-vault">查看镜像包 <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-facts"><span><i class="fact-dot"></i> 单用户 · 自托管</span><span><i class="fact-lock">⌑</i> 客户端加密</span><span><i class="fact-leaf"></i> 公开容器镜像</span></div>
+        </div>
+        <div class="vault-visual" aria-label="保险库界面示意图">
+          <div class="visual-glow"></div><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+          <div class="vault-card">
+            <div class="vault-card-top"><div class="mini-brand"><span class="mini-mark">PV</span><span>Personal Vault</span></div><span class="unlocked"><i></i> 已解锁</span></div>
+            <div class="vault-card-body"><div class="vault-sidebar"><span class="side-label">我的保险库</span><span class="side-item active"><b>▦</b> 所有条目 <small>24</small></span><span class="side-item"><b>☆</b> 收藏夹</span><span class="side-item"><b>⌕</b> 最近使用</span><div class="side-rule"></div><span class="side-label">类型</span><span class="side-item"><b>▣</b> 登录信息</span><span class="side-item"><b>▤</b> 安全笔记</span></div>
+              <div class="vault-list"><div class="list-title"><div><small>保险库</small><strong>所有条目</strong></div><span class="search-pill">⌕ <i>搜索条目</i><kbd>⌘ K</kbd></span></div><div class="entry selected"><span class="entry-icon green">N</span><span><b>Notion</b><small>me@example.com</small></span><span class="star">★</span></div><div class="entry"><span class="entry-icon amber">G</span><span><b>GitHub</b><small>dev@example.com</small></span></div><div class="entry"><span class="entry-icon blue">A</span><span><b>AWS Console</b><small>cloud@example.com</small></span></div><div class="entry"><span class="entry-icon violet">M</span><span><b>邮件账户</b><small>hello@example.com</small></span></div>
+                <div class="detail-preview"><div class="detail-title"><span>Notion</span><span class="detail-more">•••</span></div><small>用户名</small><b>me@example.com</b><small>密码</small><div class="masked">•••••••••••••••• <span>复制</span></div><div class="site-chip">⌁ notion.so</div></div>
+              </div></div>
+            <div class="vault-card-foot"><span><i></i> 已同步 · 密文存储</span><span>自动锁定 10 分钟</span></div>
+          </div>
+          <div class="floating-badge"><span class="badge-shield">✓</span><span><b>本地加密</b><small>主密码不会上传</small></span></div>
+          <div class="floating-key">⌑</div>
+        </div>
+        <div class="hero-bottom"><span>密码 · 安全笔记 · 卡片 · 身份</span><span class="scroll-label">了解 Personal Vault <b>↓</b></span></div>
+      </section>
+
+      <section class="trust-strip"><div><b>数据放在自己的服务器</b><span>Docker 一条命令启动</span></div><div><b>加密在浏览器完成</b><span>同步内容为密文</span></div><div><b>数据可随时带走</b><span>加密备份与恢复</span></div><div><b>浏览器快速填充</b><span>Chrome 与 Edge 扩展</span></div></section>
+
+      <section class="section section-wrap" id="features">
+        <div class="section-heading"><div><div class="eyebrow">你的日常工具</div><h2>够用、可靠，<em>由你做主。</em></h2></div><p>为个人使用而设计：只需维护自己的服务，不必把保险库托付给第三方账号体系。</p></div>
+        <div class="feature-grid">
+          <article class="feature-card feature-large"><span class="feature-icon icon-green">⌑</span><div><h3>先加密，再同步</h3><p>主密码只在浏览器本地派生加密密钥。服务器保存加密后的保险库内容，不接触明文密码或主密码。</p></div><div class="encryption-flow"><span>你的浏览器</span><b>明文</b><i>→</i><span class="flow-encrypted">本地加密</span><i>→</i><span>服务器密文</span></div></article>
+          <article class="feature-card"><span class="feature-icon icon-gold">✦</span><h3>一个地方收好</h3><p>登录信息、安全笔记、银行卡和身份资料。支持搜索、收藏、TOTP 与 Bitwarden JSON 导入。</p><div class="tag-row"><span>登录信息</span><span>安全笔记</span><span>TOTP</span></div></article>
+          <article class="feature-card"><span class="feature-icon icon-blue">↻</span><h3>离线也能查看</h3><p>成功解锁并同步后，浏览器会缓存密文。服务器暂时不可用时，可在本机解锁查看已同步内容。</p><div class="offline-art"><span class="offline-dot"></span><span>本地密文缓存</span><b>可用</b></div></article>
+          <article class="feature-card"><span class="feature-icon icon-violet">⇧</span><h3>备份可恢复</h3><p>下载加密的 .pvault 备份。恢复时输入创建备份时使用的主密码，不依赖原服务器数据库。</p><div class="backup-file"><span>PV</span><span><b>personal-vault.pvault</b><small>加密备份 · 本地下载</small></span><span class="download-mark">↓</span></div></article>
+        </div>
+      </section>
+
+      <section class="how-section" id="how-it-works"><div class="section-wrap how-inner"><div class="section-heading"><div><div class="eyebrow">从部署到使用</div><h2>你的保险库，<em>几步就绪。</em></h2></div><p>先运行自己的服务，再通过浏览器访问。主密码负责解锁保险库，登录密码只负责建立服务会话。</p></div>
+        <div class="steps"><article><span class="step-number">01</span><div class="step-icon">⌘</div><h3>拉取并启动镜像</h3><p>直接从 GHCR 下载公开镜像，用 Docker 运行，无需访问源码仓库。</p><small>Docker · GHCR · 自托管</small></article><div class="step-connector"></div><article><span class="step-number">02</span><div class="step-icon">↗</div><h3>创建账号与保险库</h3><p>访问你的部署地址，创建单用户账号，再设置单独的主密码。</p><small>登录密码 ≠ 主密码</small></article><div class="step-connector"></div><article><span class="step-number">03</span><div class="step-icon">⌑</div><h3>加密后开始同步</h3><p>在浏览器创建和管理条目。支持导入含通行密钥的 Bitwarden JSON，并可使用 Chrome 或 Edge 扩展。</p><small>浏览器本地加密</small></article></div>
+      </div></section>
+
+      <section class="install-section" id="install"><div class="section-wrap install-layout"><div class="install-copy"><div class="eyebrow">Docker 部署 · 公开镜像</div><h2>拉取镜像，<br /><em>直接运行。</em></h2><p>服务器安装 Docker 后，可直接从 GitHub Container Registry 拉取公开镜像运行，无需克隆项目或登录 GitHub。源码仓库为私有仓库，部署无需源码访问权限。</p><div class="install-points"><span><i>✓</i> 支持 linux/amd64 与 linux/arm64</span><span><i>✓</i> Docker 命名卷持久保存保险库数据库</span><span><i>✓</i> 仅绑定本机端口，远程访问需配置 HTTPS 反向代理</span></div><a href="https://github.com/users/Nyakooo/packages/container/package/oh-my-vault" class="text-link">打开公开镜像包 <b>↗</b></a></div>
+          <div class="terminal-card"><div class="terminal-bar"><div class="traffic"><i></i><i></i><i></i></div><span>终端 · 直接运行 Docker 镜像</span><button type="button" class="copy-button" aria-live="polite">复制命令</button></div><pre><code><span class="code-muted"># 匿名下载公开镜像</span>
+docker pull <span class="code-accent">ghcr.io/nyakooo/oh-my-vault:latest</span>
+
+<span class="code-muted"># 启动服务，并持久保存数据</span>
+docker run -d \
+  --name personal-vault \
+  --restart unless-stopped \
+  -p 127.0.0.1:18741:18741 \
+  -v personal-vault-data:/data \
+  ghcr.io/nyakooo/oh-my-vault:latest
+
+<span class="code-muted"># 打开（服务器本机）</span>
+# http://localhost:18741</code></pre><div class="terminal-foot"><span><i></i> 数据保存在 Docker 卷</span><span>personal-vault-data</span></div></div>
+        </div></section>
+
+      <section class="extension-section section-wrap" id="extension"><div class="extension-panel"><div class="extension-copy"><div class="eyebrow">Chrome & Edge · 推荐通过商店安装</div><h2>让常用登录信息<br /><em>就在手边。</em></h2><p>连接自己的 Personal Vault 服务，在浏览器本地解密并查找登录项。支持多工作区、TOTP、密码生成、通行密钥，以及可选的悬浮面板和登录保存提示。填充由你主动触发，不会自动提交表单；保存新登录信息和使用通行密钥均需确认。各商店审核进度不同，实际功能以已安装版本为准。</p><div class="extension-actions"><a class="button button-primary" href="https://chromewebstore.google.com/detail/personal-vault/edbbapcpgldalkjjjdcmiobgopfijafp" target="_blank" rel="noopener noreferrer">Chrome 商店 <span>↗</span></a><a class="button button-quiet" href="https://microsoftedge.microsoft.com/addons/detail/kipamficohjmhpmpgfjgkbhljepenejc" target="_blank" rel="noopener noreferrer">Edge 商店 <span>↗</span></a><a class="button button-quiet button-download" href="#extension-setup">连接与安装 <span>↓</span></a></div><div class="extension-download-note"><b>商店安装可接收后续更新</b><small>旧版 <a href="./downloads/personal-vault-v0.2.1.zip" download>0.2.1 离线包</a> 仅作历史归档，不代表当前版本；手动安装不会自动更新，日常使用请选择商店版。</small></div></div><div class="extension-preview"><div class="browser-frame"><div class="browser-top"><span></span><span></span><span></span><div class="address-bar">🔒 example.com</div><span class="puzzle">◆</span></div><div class="browser-page"><div class="page-lines"><i></i><i></i><i></i><b></b><i></i></div><div class="extension-popup"><div class="popup-top"><span class="mini-mark">PV</span><b>Personal Vault</b><span class="popup-lock">⌑</span></div><div class="match-label">匹配此网站 <b>1</b></div><div class="popup-login"><span class="entry-icon green">N</span><span><b>Notion</b><small>me@example.com</small></span><span>›</span></div><span class="fill-demo" aria-hidden="true">填入登录信息</span><small class="popup-safety">仅填入匹配的网站 · 不会自动提交</small></div></div></div><div class="extension-note"><span>✓</span><div><b>你检查后再提交</b><small>扩展不会自动提交登录表单。</small></div></div></div></div></section>
+
+      <section class="section section-wrap guide-section" id="extension-setup">
+        <div class="section-heading"><div><div class="eyebrow">安装后，连接你自己的服务</div><h2>从安装到<em>第一次填充。</em></h2></div><p>扩展不提供托管账号，也没有预设服务器。先完成上方 Docker 部署，再授权你的工作区。</p></div>
+        <ol class="guide-grid">
+          <li><h3>安装扩展</h3><p>从 Chrome 或 Edge 商店安装并固定到工具栏。如需使用历史离线包，先解压，在 chrome://extensions 或 edge://extensions 开启开发者模式，选择“加载已解压的扩展程序”，选中含 manifest.json 的文件夹。</p></li>
+          <li><h3>授权工作区</h3><p>打开扩展 Settings，输入自己服务的 HTTPS 地址（包括部署子路径），保存后选择 Connect extension。在打开的网页中登录、解锁、选择工作区，并确认本次浏览器授权。</p></li>
+          <li><h3>解锁并填充</h3><p>在扩展输入工作区密码，本地解锁。访问已保存的网站，选择匹配条目并点击 Fill login，检查后自行提交。更新扩展后请刷新已打开的网站；无法填充时可手动复制。</p></li>
+        </ol>
+      </section>
+
+      <section class="security-section"><div class="section-wrap security-inner"><div class="security-symbol"><span>⌑</span><i></i><i></i></div><div><div class="eyebrow">为个人使用设计</div><h2>自己托管，也要了解边界。</h2><p>请使用 HTTPS 并保护好服务器。主密码无法找回；加密备份也需要导出时的主密码，备份无法绕过密码恢复。浏览器缓存和剪贴板清理不等于绝对安全。建议定期下载并妥善保管加密备份。</p><span class="text-link">主密码不会上传 · 备份请自行保管</span></div><div class="security-aside"><span>你负责</span><b>服务器、HTTPS<br />与备份保管</b><span class="aside-rule"></span><span>浏览器负责</span><b>本地加密<br />与保险库解锁</b></div></div></section>
+
+      <section class="section section-wrap guide-section" id="safety">
+        <div class="section-heading"><div><div class="eyebrow">部署与日常维护</div><h2>把安全落实到<em>每一步。</em></h2></div><p>客户端加密保护存储和同步的保险库内容。它不能保护已被入侵的设备，也不能阻止被篡改的网页在解锁时窃取密码。</p></div>
+        <div class="guide-grid safety-grid">
+          <article><h3>01 · HTTPS 与服务器</h3><p>示例命令仅监听 127.0.0.1。让同机反向代理通过有效证书提供 HTTPS，并只开放必要端口；不要直接将 18741 端口暴露到公网。若代理运行在容器中，使用专用 Docker 网络连接服务。保持系统、Docker 和浏览器更新。</p><p>如在宿主机运行 Caddy，将域名解析到服务器，放行证书申请和 HTTPS 所需的 80/443 端口，并替换示例域名：</p><pre><code>vault.example.com {
+  reverse_proxy 127.0.0.1:18741
+}</code></pre></article>
+          <article><h3>02 · 两种密码，各有职责</h3><p>登录密码用于服务器账号认证，主密码（工作区密码）用于本地解密。为两者设置独立的强密码；主密码请在保险库之外妥善保管。忘记主密码时，即使有加密备份也无法解密。</p></article>
+          <article><h3>03 · 备份与恢复</h3><p>定期导出 .pvault 加密备份，另存一份到独立设备，并在独立工作区验证可恢复。导出需要账号登录密码，恢复需要导出时的主密码。明文 JSON 含全部敏感数据，请避免长期保存或上传到公共位置。</p></article>
+          <article><h3>04 · 扩展与设备</h3><p>只授权自己的服务器和所需工作区。在公共或共享设备上避免解锁；离开时主动锁定。按需开启悬浮面板、登录保存和通行密钥权限。设备丢失或不再使用时，在网页设置的浏览器扩展授权中撤销连接。</p></article>
+          <article><h3>05 · 更新前先备份</h3><p>先导出备份，再停止容器并快照整个数据卷，保留原镜像版本。拉取新镜像后，使用相同数据卷与配置重建容器；不要删除数据卷。更新后检查登录、解锁、条目和扩展连接。回退时使用匹配的旧镜像及数据快照。</p></article>
+          <article><h3>06 · 填充前核对网站</h3><p>检查域名与 HTTPS，再选择要填入的账号。扩展不会替你提交表单；跨站表单需额外确认。剪贴板可被其他程序读取，复制后及时清理。离线缓存只能读取已同步内容，不能代替独立备份。</p></article>
+        </div>
+      </section>
+
+      <section class="final-cta section-wrap"><div class="final-card"><div class="final-orb"></div><div class="eyebrow">个人自托管 · Docker 镜像公开下载</div><h2>准备好掌管自己的密码了吗？</h2><p>从 GHCR 获取镜像，在自己的服务器启动你的保险库。</p><a class="button button-light" href="https://github.com/users/Nyakooo/packages/container/package/oh-my-vault">查看公开镜像包 <span>↗</span></a></div></section>
+    </main>
+    <footer class="site-footer section-wrap"><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">PV</span><span>Personal <b>Vault</b></span></a><span>为个人自托管而做 · 公开镜像部署</span><div><a href="./privacy.zh-CN.html">隐私政策</a><a href="https://github.com/Nyakooo/oh-my-vault-homepage/issues">问题反馈</a><a href="https://github.com/users/Nyakooo/packages/container/package/oh-my-vault">GHCR 镜像包</a></div></footer>
+    <script>
+      document.querySelectorAll(".copy-button").forEach((button) => {
+        button.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(button.closest(".terminal-card").querySelector("code").textContent.trim());
+            button.textContent = "已复制";
+            window.setTimeout(() => { button.textContent = "复制命令"; }, 1800);
+          } catch {
+            button.textContent = "请手动复制";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

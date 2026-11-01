@@ -4,3 +4,26 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 
 .extension-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:22px}.extension-actions .button{min-height:42px;justify-content:space-between;gap:7px;padding:0 12px;border-radius:8px;font-size:10px;white-space:nowrap}.extension-actions .button-download{background:#eef4ed;border-color:#dce8da;color:#43684c}.extension-download-note{display:grid;gap:4px;margin-top:12px;padding:10px 12px;border:1px solid #e3ebe1;border-radius:8px;background:#f8faf7;color:#718074}.extension-download-note b{color:#5c705f;font-size:9px;font-weight:600}.extension-download-note small{color:#849087;font-size:8px;line-height:1.7}.extension-download-note a{margin-left:4px;color:#315f49;font-weight:600;text-decoration:underline;text-underline-offset:2px}@media(max-width:700px){.extension-actions{gap:8px}.extension-actions .button{padding-inline:9px;font-size:8px}}@media(max-width:450px){.extension-actions{grid-template-columns:1fr}.extension-actions .button{min-height:40px;padding-inline:13px;font-size:9px}}
+
+/* Language navigation and readable setup / maintenance guides. */
+.language-switch{padding:10px 12px;border:1px solid #dfe7dd;border-radius:7px;color:var(--forest);font-size:12px;white-space:nowrap}
+:focus-visible{outline:3px solid #638c70;outline-offset:4px}
+.guide-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;list-style:none;margin:0;padding:0;counter-reset:setup}
+.guide-grid>li,.guide-grid>article{padding:24px;border:1px solid var(--line);border-radius:12px;background:#f5f8f2;overflow-wrap:anywhere}
+.guide-grid>li{counter-increment:setup}
+.guide-grid>li:before{content:"0" counter(setup);font-family:var(--serif);font-size:25px;color:#6b8c73}
+.guide-grid h3{margin:12px 0;color:var(--forest);font-size:17px;line-height:1.5}
+.guide-grid p{margin:0;color:#53695b;font-size:14px;line-height:1.9}
+.safety-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.fill-demo{display:grid;place-items:center}
+html[lang=en] .hero h1{font-size:clamp(44px,5vw,64px)}
+html[lang=en] .main-nav{gap:20px}
+html[lang=en] .extension-actions{grid-template-columns:1fr}
+html[lang=en] .extension-actions .button{justify-content:center;font-size:12px}
+html[lang=en] .final-card h2{font-size:clamp(23px,3vw,34px)}
+@media(max-width:1100px){.main-nav{display:none}.site-header{gap:12px}.language-switch{margin-left:auto}}
+@media(max-width:700px){.guide-grid,.safety-grid{grid-template-columns:1fr}.guide-grid>li,.guide-grid>article{padding:22px}.site-header{padding-inline:16px}.language-switch{padding:8px;font-size:11px}.header-cta{font-size:9px}.site-footer>div{flex-wrap:wrap;gap:12px}.hero-facts{flex-wrap:wrap}.hero-bottom>span:first-child{max-width:52%}}
+@media(max-width:380px){.header-cta{display:none}.vault-visual{transform:scale(.65);margin-inline:-60px}.hero h1{font-size:44px}}
+.hero{overflow:clip}
+.guide-grid pre{margin:16px 0 0;padding:14px;border-radius:8px;background:#183f34;color:#edf4ed;overflow:auto;font-size:12px;line-height:1.8}
+.guide-grid code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
